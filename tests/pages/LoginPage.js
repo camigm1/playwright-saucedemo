@@ -3,6 +3,12 @@
 // Put this file in a folder called "pages" in your project.
 
 class LoginPage {
+  static users =["standard_user",
+"locked_out_user",
+"problem_user",
+"performance_glitch_user",
+"error_user",
+"visual_user"]
   constructor(page) {
     this.page = page;
 
@@ -14,7 +20,7 @@ class LoginPage {
     this.loginButton = page.locator('[data-test="login-button"]');
     this.errorMessage = page.locator('[data-test="error"]');
   }
-
+ 
   // Actions: things a user can do on this page.
     async goto() {
     await this.page.goto('https://www.saucedemo.com/'); // uses baseURL from the config
@@ -28,3 +34,4 @@ class LoginPage {
 }
 
 module.exports = { LoginPage };
+// export default new LoginPage
